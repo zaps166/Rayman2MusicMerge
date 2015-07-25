@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>630</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Merging music from Rayman 2 game</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Imgs.qrc">
+    <normaloff>:/main</normaloff>:/main</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_4">
+    <property name="margin">
+     <number>1</number>
+    </property>
+    <property name="spacing">
+     <number>1</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Music from Rayman 2 game</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="2" column="0" colspan="2">
+        <widget class="QListWidget" name="apmListW">
+         <property name="dragEnabled">
+          <bool>true</bool>
+         </property>
+         <property name="dragDropMode">
+          <enum>QAbstractItemView::DragOnly</enum>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::ExtendedSelection</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="QSpinBox" name="chnB">
+         <property name="prefix">
+          <string>Number of channels: </string>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>2</number>
+         </property>
+         <property name="value">
+          <number>2</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="2">
+        <widget class="QSpinBox" name="srateB">
+         <property name="suffix">
+          <string> Hz</string>
+         </property>
+         <property name="prefix">
+          <string>Sample rate: </string>
+         </property>
+         <property name="minimum">
+          <number>11025</number>
+         </property>
+         <property name="maximum">
+          <number>22050</number>
+         </property>
+         <property name="singleStep">
+          <number>11025</number>
+         </property>
+         <property name="value">
+          <number>22050</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>Playlist</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="1" column="0">
+        <widget class="QLabel" name="playListTimeL">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="ListWidget" name="playListW">
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::ExtendedSelection</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>630</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_Plik">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="action_Load_project"/>
+    <addaction name="action_Choose_a_music_directory"/>
+    <addaction name="separator"/>
+    <addaction name="action_Save_project"/>
+    <addaction name="action_Export_to_WAV"/>
+    <addaction name="separator"/>
+    <addaction name="action_Remove_selected_entries"/>
+    <addaction name="action_Clear_playlist"/>
+    <addaction name="separator"/>
+    <addaction name="action_Close"/>
+   </widget>
+   <widget class="QMenu" name="menu_Odtwarzanie">
+    <property name="title">
+     <string>&amp;Playing</string>
+    </property>
+    <addaction name="action_Play_from_currect_position"/>
+    <addaction name="action_Play_from_the_beginning"/>
+    <addaction name="action_Play_selected_file"/>
+    <addaction name="separator"/>
+    <addaction name="action_Stop_playing"/>
+   </widget>
+   <widget class="QMenu" name="menuO_P_rogramie">
+    <property name="title">
+     <string>&amp;About</string>
+    </property>
+    <addaction name="action_About_Programmer"/>
+    <addaction name="action_About_Qt"/>
+   </widget>
+   <addaction name="menu_Plik"/>
+   <addaction name="menu_Odtwarzanie"/>
+   <addaction name="menuO_P_rogramie"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::AllToolBarAreas</set>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>BottomToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_Clear_playlist"/>
+   <addaction name="action_Export_to_WAV"/>
+   <addaction name="action_Play_from_the_beginning"/>
+   <addaction name="action_Play_from_currect_position"/>
+   <addaction name="action_Stop_playing"/>
+  </widget>
+  <action name="action_Choose_a_music_directory">
+   <property name="icon">
+    <iconset resource="Imgs.qrc">
+     <normaloff>:/open</normaloff>:/open</iconset>
+   </property>
+   <property name="text">
+    <string>Choose a music &amp;directory</string>
+   </property>
+   <property name="toolTip">
+    <string>Choose a music directory</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+O</string>
+   </property>
+  </action>
+  <action name="action_Close">
+   <property name="text">
+    <string>Cl&amp;ose</string>
+   </property>
+   <property name="toolTip">
+    <string>Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+F4</string>
+   </property>
+  </action>
+  <action name="action_Play_from_the_beginning">
+   <property name="icon">
+    <iconset resource="Imgs.qrc">
+     <normaloff>:/play</normaloff>:/play</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Play from the beginning</string>
+   </property>
+   <property name="toolTip">
+    <string>Play from the beginning</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+A</string>
+   </property>
+  </action>
+  <action name="action_Play_selected_file">
+   <property name="icon">
+    <iconset resource="Imgs.qrc">
+     <normaloff>:/play</normaloff>:/play</iconset>
+   </property>
+   <property name="text">
+    <string>Play s&amp;elected file</string>
+   </property>
+   <property name="toolTip">
+    <string>Play selected file</string>
+   </property>
+   <property name="shortcut">
+    <string>Return</string>
+   </property>
+  </action>
+  <action name="action_Export_to_WAV">
+   <property name="icon">
+    <iconset resource="Imgs.qrc">
+     <normaloff>:/export</normaloff>:/export</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Export to WAV</string>
+   </property>
+   <property name="toolTip">
+    <string>Export to WAV</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="action_Stop_playing">
+   <property name="icon">
+    <iconset resource="Imgs.qrc">
+     <normaloff>:/stop</normaloff>:/stop</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Stop playing</string>
+   </property>
+   <property name="toolTip">
+    <string>Stop playing</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
+  <action name="action_Remove_selected_entries">
+   <property name="icon">
+    <iconset resource="Imgs.qrc">
+     <normaloff>:/delEntry</normaloff>:/delEntry</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Remove selected entries</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove selected entries</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="action_Clear_playlist">
+   <property name="icon">
+    <iconset resource="Imgs.qrc">
+     <normaloff>:/clear</normaloff>:/clear</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Clear playlist</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear playlist</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+Del</string>
+   </property>
+  </action>
+  <action name="action_Play_from_currect_position">
+   <property name="icon">
+    <iconset resource="Imgs.qrc">
+     <normaloff>:/play</normaloff>:/play</iconset>
+   </property>
+   <property name="text">
+    <string>Play from &amp;currect position</string>
+   </property>
+   <property name="toolTip">
+    <string>Play from currect position</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+S</string>
+   </property>
+  </action>
+  <action name="action_About_Programmer">
+   <property name="text">
+    <string>About &amp;Programmer</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="action_About_Qt">
+   <property name="text">
+    <string>About &amp;Qt</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="action_Save_project">
+   <property name="icon">
+    <iconset resource="Imgs.qrc">
+     <normaloff>:/save</normaloff>:/save</iconset>
+   </property>
+   <property name="text">
+    <string>Save &amp;project</string>
+   </property>
+   <property name="toolTip">
+    <string>Save project</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_Load_project">
+   <property name="icon">
+    <iconset resource="Imgs.qrc">
+     <normaloff>:/load</normaloff>:/load</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Load project</string>
+   </property>
+   <property name="toolTip">
+    <string>Load project</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ListWidget</class>
+   <extends>QListWidget</extends>
+   <header>ListWidget.hpp</header>
+   <slots>
+    <signal>itemsDropped()</signal>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>apmListW</tabstop>
+  <tabstop>playListW</tabstop>
+  <tabstop>chnB</tabstop>
+  <tabstop>srateB</tabstop>
+ </tabstops>
+ <resources>
+  <include location="Imgs.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>action_Close</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>306</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>playListW</sender>
+   <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>play(QListWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>469</x>
+     <y>259</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>313</x>
+     <y>260</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>apmListW</sender>
+   <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>play(QListWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>157</x>
+     <y>238</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>313</x>
+     <y>260</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>srateB</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>filterList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>86</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>309</x>
+     <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chnB</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>filterList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>309</x>
+     <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>playListW</sender>
+   <signal>itemsDropped()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>calcTime()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>464</x>
+     <y>226</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>309</x>
+     <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Play_from_currect_position</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>playTheList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>314</x>
+     <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Play_from_the_beginning</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>playTheList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>314</x>
+     <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>play(QListWidgetItem*)</slot>
+  <slot>filterList()</slot>
+  <slot>calcTime()</slot>
+  <slot>playTheList()</slot>
+ </slots>
+</ui>

@@ -1,0 +1,13 @@
+<RCC>
+	<qresource prefix="/">
+		<file alias="play">imgs/play.png</file>
+		<file alias="stop">imgs/stop.png</file>
+		<file alias="open">imgs/open.png</file>
+		<file alias="delEntry">imgs/delEntry.png</file>
+		<file alias="export">imgs/export.png</file>
+		<file alias="main">imgs/main.png</file>
+		<file alias="clear">imgs/clear.png</file>
+		<file alias="load">imgs/load.png</file>
+		<file alias="save">imgs/save.png</file>
+	</qresource>
+</RCC>
